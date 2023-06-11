@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { notification } from 'components/Notification/Notification';
 import { FcSearch } from 'react-icons/fc';
 import { Form, FormButton, FormInput, Header } from './Searchbar.styled';
+import PropTypes from 'prop-types';
+
 
 const Searchbar = ({onSubmit}) => {
   const [value, setValue] = useState('');
@@ -41,6 +43,8 @@ const  handleSubmit = e => {
   );
 };
 
-
+Searchbar.propTypes = {
+	onSubmit : PropTypes.func.isRequired,
+}
 
 export default Searchbar;

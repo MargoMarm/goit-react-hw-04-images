@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { ModalWindow, Overlay } from './Modal.styled';
+import PropTypes from 'prop-types';
 
 const Modal = ({ imgSrc, alt, onClose }) => {
 	const handleOverayClick = ( {target, currentTarget} ) => {
@@ -28,6 +29,10 @@ const Modal = ({ imgSrc, alt, onClose }) => {
   );
 };
 
-
+Modal.proptTypes = {
+  imgSrc: PropTypes.string.isRequired,
+  alt: PropTypes.string,
+  onClose: PropTypes.func.isRequired,
+};
 
 export default Modal;
